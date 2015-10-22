@@ -89,3 +89,6 @@ Example response:
 Run ```mvn clean install``` against restaurant-app/pom.xml. The result is a war file inside restaurant-app-web/target directory.
 
 This app relies on Hibernate schema definition capabilities. This app is configured to use MySQL 5. If you intend to use a different RDBMS, update ```hibernate.dialect``` property (inside restaurant-app-service/src/main/resources/META-INF/persistence.xml) accordingly.
+
+#Building front-end
+Run ```npm install``` and ```gulp``` (without parameters) from inside restaurant-app-frontend2 directory. The resulting app is in restaurant-app-frontend2/dist directory
