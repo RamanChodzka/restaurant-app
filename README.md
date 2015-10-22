@@ -42,5 +42,18 @@ Example response:
 {"id":1,"name":"Lunch menu item","price":10.00,"day":"2015-10-22","restaurantId":1}
 ```
 
+##Cast a vote
+POST /api/v1/restaurant-votes
 
+Example request body:
+```javascript
+{"restaurantId":1,"userId":1}
+```
 
+##Get a vote
+POST /api/v1/restaurant-votes/{restaurantVoteId}
+
+Example response:
+```javascript
+{"restaurantId":1,"userId":1}
+```
