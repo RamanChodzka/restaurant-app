@@ -92,3 +92,19 @@ This app relies on Hibernate schema definition capabilities. This app is configu
 
 #Building front-end
 Run ```npm install``` and ```gulp``` (without parameters) from inside restaurant-app-frontend2 directory. The resulting app is in restaurant-app-frontend2/dist directory
+
+#Deploing the app
+In MySQL create database ```restaurantdb```
+
+This app expects a database connection to be available via JNDI jdbc/RestaurantDB lookup.
+If Tomcat is used for app deployment then add to Tomcat conf/context.xml the following lines:
+
+```xml
+<Resource name="jdbc/RestaurantDB" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="..." password="..." driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/restaurantdb"/>
+```
+Update Resource attributes in accordance with your MySQL instance settings.
+
+Put ```mysql-connector-java``` jar into Tomcat's lib directory.
