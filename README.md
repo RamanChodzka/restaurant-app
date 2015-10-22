@@ -63,5 +63,23 @@ GET /api/v1/lunch-menus/today
 
 Example response:
 ```javascript
-{"lunchMenus":[{"restaurant":{"id":1,"title":"My restaurant"},"lunchMenuItems":[{"id":1,"name":"Lunch menu item","price":10.00,"day":"2015-10-22","restaurantId":1}]}]}
+{
+  "lunchMenus":[
+    {
+      "restaurant":{
+        "id":1,
+        "title":"My restaurant"
+      },
+      "lunchMenuItems":[
+        {
+          "id":1,
+          "name":"Lunch menu item",
+          "price":10.00,
+          "day":"2015-10-22",
+          "restaurantId":1
+        }
+      ]
+    }
+  ]
+}
 ```
