@@ -11,7 +11,7 @@ Example request body:
 ```
 
 ##Get a restaurant
-POST /api/v1/restaurants/{restaurantId}
+GET /api/v1/restaurants/{restaurantId}
 
 Example response:
 ```javascript
@@ -35,7 +35,7 @@ Example request body:
 ```
 
 ##Get a lunch menu item
-POST /api/v1/lunch-menu-items/{lunchMenuItemId}
+GET /api/v1/lunch-menu-items/{lunchMenuItemId}
 
 Example response:
 ```javascript
@@ -51,9 +51,17 @@ Example request body:
 ```
 
 ##Get a vote
-POST /api/v1/restaurant-votes/{restaurantVoteId}
+GET /api/v1/restaurant-votes/{restaurantVoteId}
 
 Example response:
 ```javascript
 {"restaurantId":1,"userId":1}
+```
+
+##Get menu of the day
+GET /api/v1/lunch-menus/today
+
+Example response:
+```javascript
+{"lunchMenus":[{"restaurant":{"id":1,"title":"My restaurant"},"lunchMenuItems":[{"id":1,"name":"Lunch menu item","price":10.00,"day":"2015-10-22","restaurantId":1}]}]}
 ```
