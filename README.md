@@ -107,4 +107,22 @@ If Tomcat is used for app deployment then add to Tomcat conf/context.xml the fol
 ```
 Update Resource attributes in accordance with your MySQL instance settings.
 
-Put ```mysql-connector-java``` jar into Tomcat's lib directory.
+Put ```mysql-connector-java``` jar into Tomcat's lib directory. Put restaurant-app.war into Tomcat's webapps directory.
+
+Set up Nginx. Add to ```http``` section of your nginx.conf the following lines:
+
+server {
+  listen       7777;
+  server_name  localhost;
+  
+  location / {
+    root "/path/to/restaurant-app-frontend2/dist";
+  }
+  
+  location ~ (/api/v1/.*) {
+    proxy_pass http://localhost:8080/restaurant-app$1;
+  }
+}
+
+
+Start MySQL, Tomcat and Nginx.
