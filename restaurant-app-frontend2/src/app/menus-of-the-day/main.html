@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div>
+        <navbar></navbar>
+    </div>
+
+    <div class="row">
+        <div class="alert alert-warning" role="alert" ng-if="!main.lunchMenus.length">
+            Nothing here yet. Consider <a href="#/restaurants">adding restaurants or lunch menus</a>.
+        </div>
+        <div class="col-sm-6 col-md-4" ng-repeat="lunchMenu in main.lunchMenus">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>{{lunchMenu.restaurant.title}}</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="lunchMenuItem in lunchMenu.lunchMenuItems">
+                            <td>{{lunchMenuItem.name}}</td>
+                            <td>{{lunchMenuItem.price}}</td>
+                        </tr>
+                    </table>
+                    <p class="clearfix"><button type="button" class="btn btn-success pull-right" ng-click="main.voteFor(lunchMenu.restaurant)">+1</button></p>
+                    <div class="alert alert-success" role="alert" ng-if="lunchMenu.restaurant.voteSuccess">
+                        Thank you for your vote!
+                    </div>
+                    <div class="alert alert-danger" role="alert" ng-if="lunchMenu.restaurant.error.errorName === 'VoteCannotBeAcceptedException'">
+                        You have already cast your vote
+                    </div>
+                    <div class="alert alert-danger" role="alert" ng-if="lunchMenu.restaurant.errorStatus >= 500">
+                        Unexpected error occurred
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
