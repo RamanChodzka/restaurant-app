@@ -111,6 +111,7 @@ Put ```mysql-connector-java``` jar into Tomcat's lib directory. Put restaurant-a
 
 Set up Nginx. Add to ```http``` section of your nginx.conf the following lines:
 
+```nginx
 server {
   listen       7777;
   server_name  localhost;
@@ -123,6 +124,6 @@ server {
     proxy_pass http://localhost:8080/restaurant-app$1;
   }
 }
-
+```
 
 Start MySQL, Tomcat and Nginx.
