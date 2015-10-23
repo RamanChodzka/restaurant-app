@@ -97,7 +97,7 @@ Run ```npm install``` and ```gulp``` (without parameters) from inside restaurant
 In MySQL create database ```restaurantdb```
 
 This app expects a database connection to be available via JNDI jdbc/RestaurantDB lookup.
-If Tomcat is used for app deployment then add to Tomcat conf/context.xml the following lines:
+If Tomcat is used for app deployment then add the following lines to Tomcat's conf/context.xml:
 
 ```xml
 <Resource name="jdbc/RestaurantDB" auth="Container" type="javax.sql.DataSource"
