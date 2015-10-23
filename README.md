@@ -109,7 +109,7 @@ Update Resource attributes in accordance with your MySQL instance settings.
 
 Put ```mysql-connector-java``` jar into Tomcat's lib directory. Put restaurant-app.war into Tomcat's webapps directory.
 
-Set up Nginx. Add to ```http``` section of your nginx.conf the following lines:
+Set up Nginx. Add the following lines to ```http``` section of your nginx.conf:
 
 ```nginx
 server {
