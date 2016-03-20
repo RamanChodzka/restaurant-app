@@ -93,7 +93,7 @@ This app relies on Hibernate schema definition capabilities. This app is configu
 #Building front-end
 Run ```npm install``` and ```gulp``` (without parameters) from inside restaurant-app-frontend2 directory. The resulting app is in restaurant-app-frontend2/dist directory
 
-#Deploing the app
+#Deploying the app
 In MySQL create database ```restaurantdb```
 
 This app expects a database connection to be available via JNDI jdbc/RestaurantDB lookup.
